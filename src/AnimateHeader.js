@@ -2,6 +2,14 @@ async function changeText()
 {
     const fields = ["...Web/Mobile Dev", "...Game Dev", "...Robotics", "...System Software", "...AI"];
     var index = 0; 
+    var startText = "";
+
+    for (i = 0; i < fields[0].length; i++)
+    {
+        startText += fields[0][i];
+        document.getElementById("header-3").innerHTML = startText;
+        await sleep(120);
+    }
 
     while (true)
     {
@@ -18,44 +26,55 @@ async function changeText()
 
             newText += String.fromCharCode(rand);
             document.getElementById("header-3").innerHTML = "..." + newText + currText.substring(i + 1, currText.length);
-            await sleep(100);
+            await sleep(120);
         }
 
         var change = "";
+        var id;
 
-        for (var i = 0; i < fields[index].length; i++)
+        if (index == fields.length - 1)
+            id = 0;
+
+        else
+            id = index + 1;
+
+        change = fields[id].substring(0, 3);
+        var newID = 0;
+
+        for (var i = 3; i < fields[id].length; i++)
         {
-            change += fields[index][i];
-            document.getElementById("header-3").innerHTML = change + newText.substring(i + 1, newText.length);
-            await sleep(100);
+            change += fields[id][i];
+            document.getElementById("header-3").innerHTML = change + newText.substring(newID + 1, newText.length);
+            newID++;
+            await sleep(120);
         }
 
-        if (fields[index].length < newText.length)
+        if (fields[id].length < newText.length)
         {
-            var j = 1;
+            //var j = 1;
 
-            for (var i =  newText.length - fields[index].length + 1; i > 0; i--)
+            for (var i = newID; i <= newText.length; i++)
             {
                 let text = "";
-                text = "..." + change.substring(0, fields[index].length);
+                text = change;
 
-                for (var k = j; k > 0; k--)
-                    text += " ";
+                // for (var k = j; k > 0; k--)
+                //     text += " ";
 
-                j++;
-                text += change.substring(newText.length - i, newText.length);
+                // j++;
+                text += newText.substring(i, newText.length);
                 document.getElementById("header-3").innerHTML = text;
-                await sleep(100);
+                await sleep(120);
             }
         }
 
-        else if (fields[index].length > newText.length)
+        else if (fields[id].length > newText.length)
         {
-            for (var i = change.length; i < fields[index].length; i++)
+            for (var i = change.length; i < fields[id].length; i++)
             {
-                change += fields[index][i];
-                document.getElementById("header-3").innerHTML = "..." + change;
-                await sleep(100);
+                change += fields[id][i];
+                document.getElementById("header-3").innerHTML = change;
+                await sleep(120);
             }
         }
 
@@ -69,7 +88,10 @@ async function changeText()
 
 function getRndInteger(min, max) 
 {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
+    var ret = "\\";
+    while (ret == "\\")
+    ret = Math.floor(Math.random() * (max - min + 1) ) + min;
+    return ret;
 }
 
 function sleep(ms) 
