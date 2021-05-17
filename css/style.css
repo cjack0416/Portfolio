@@ -1,0 +1,26 @@
+/* Globals */
+body {
+  background-color: #606060;
+  font-size: 30px;
+  font-family: "Source Code Pro", monospace;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+/* Utils */
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+header {
+  color: #1fa61b;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#header-3 {
+  align-self: flex-end;
+}
