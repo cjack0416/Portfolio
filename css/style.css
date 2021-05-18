@@ -2,23 +2,67 @@
 body {
   background-color: #606060;
   font-size: 30px;
-  font-family: "Source Code Pro", monospace;
   line-height: 1.6em;
   margin: 0;
 }
 
 /* Utils */
-.container {
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
+
+/* Terminal */
+#terminal-toolbar {
+  height: 30px;
+  width: 904px;
+  background-color: #c1c2c1;
+  /* border-top-right-radius: 10px;
+  border-top-left-radius: 10px; */
+  margin-top: 50px;
+  margin-left: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tool-box {
+  background-color: #c1c2c1;
+  width: 60px;
+  height: 31.5px;
+  font-size: 22px;
+  color: #dfdfdf;
+  border-style: none;
+}
+
+#tool-box-x {
+  background-color: #c1c2c1;
+  width: 60px;
+  height: 31.5px;
+  font-size: 22px;
+  color: #dfdfdf;
+  border-style: none;
+}
+
+.tool-box:hover {
+  background-color: #aeadad;
+}
+
+#tool-box-x:hover {
+  background-color: #ce2424;
+}
+
+#terminal {
+  margin-left: 60px;
+  background-color: black;
+  border-style: ridge;
+  border-color: #c1c2c1;
+  /*border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;*/
+  width: 900px;
+  height: 300px;
 }
 
 header {
+  font-family: "Source Code Pro", monospace;
   color: #1fa61b;
   display: flex;
-  justify-content: center;
-  margin-top: 30px;
+  padding-left: 10px;
 }
 
 #header-3 {
