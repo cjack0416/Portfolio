@@ -1,7 +1,6 @@
 /* Globals */
 body {
-  background-color: #606060;
-  font-size: 30px;
+  background-color: #2e2e2e;
   line-height: 1.6em;
   margin: 0;
 }
@@ -13,8 +12,6 @@ body {
   height: 30px;
   width: 904px;
   background-color: #c1c2c1;
-  /* border-top-right-radius: 10px;
-  border-top-left-radius: 10px; */
   margin-top: 50px;
   margin-left: 60px;
   display: flex;
@@ -52,14 +49,13 @@ body {
   background-color: black;
   border-style: ridge;
   border-color: #c1c2c1;
-  /*border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;*/
   width: 900px;
   height: 300px;
 }
 
 header {
   font-family: "Source Code Pro", monospace;
+  font-size: 25px;
   color: #1fa61b;
   display: flex;
   padding-left: 10px;
@@ -67,4 +63,31 @@ header {
 
 #header-3 {
   align-self: flex-end;
+}
+
+#navbar {
+  background-color: black;
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+#navbar ul {
+  padding: 0;
+}
+
+#navbar li {
+  display: inline;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: "Nunito", sans-serif;
+}
+
+#navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  color: #1fa61b;
 }
